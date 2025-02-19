@@ -1,1 +1,8 @@
+Why JupyterLab?
+Interactive Environment: JupyterLab allows running code in individual cells, facilitating experimentation and iterative development.
+Data Exploration and Visualization: It integrates seamlessly with libraries like matplotlib and seaborn for creating visualizations and exploring data.
+Documentation and Sharing: JupyterLab supports markdown and LaTeX for creating rich documentation and sharing code with others.
 
+JupyterLab can be easily installed using conda, if it isn't already installed:
+Make sure you are running the command from within your ai environment.
+Prabhash992@htb[/htb]$ conda install -y jupyter jupyterlab notebook ipykernel 
