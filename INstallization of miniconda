@@ -40,6 +40,67 @@ Prabhash992@htb[/htb]$ conda config --set channel_priority strict
 
 
 
+Deactivating Base
+To prevent the base environment from activating automatically, you can use the following command:
+Prabhash992@htb[/htb]$ conda config --set auto_activate_base false
+
+
+
+Managing Virtual Environments
+In software development, managing dependencies can quickly become a complex task, especially when working on multiple projects with different library requirements.
+
+This is where virtual environments come into play. A virtual environment is an isolated space where you can install packages and dependencies specific to a particular project, without interfering with other projects or your system's global Python installation.
+
+They are critical for AI tasks for a few reasons:
+
+Dependency Isolation: Each project can have its own set of dependencies, even if they conflict with those of other projects.
+Clean Project Structure: Keeps your project directory clean and organized by containing all dependencies within the environment.
+Reproducibility: Ensures that your project can be easily reproduced on different systems with the same dependencies.
+System Stability: Prevents conflicts with your global Python installation and avoids breaking other projects.
+
+
+
+conda provides a simple way to create virtual environments. For example, to create a new environment named ai with Python 3.11, use the following command:
+Prabhash992@htb[/htb]$ conda create -n ai python=3.11
+
+To activate the myenv environment, use:
+Prabhash992@htb[/htb]$ conda activate ai
+
+To deactivate the environment, use:
+Prabhash992@htb[/htb]$ conda deactivate
+
+Essential Setup
+Use the conda install command to install the following core packages:
+Prabhash992@htb[/htb]$ conda install -y numpy scipy pandas scikit-learn matplotlib seaborn transformers datasets tokenizers accelerate evaluate optimum huggingface_hub nltk category_encoders
+Prabhash992@htb[/htb]$ conda install -y pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
+Prabhash992@htb[/htb]$ pip install requests requests_toolbelt
+
+Prabhash992@htb[/htb]$ conda update --all
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
