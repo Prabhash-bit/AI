@@ -1,1 +1,8 @@
 
+
+
+
+First, install Scoop. Open PowerShell and run:
+
+C:\> Set-ExecutionPolicy RemoteSigned -scope CurrentUser # Allow scripts to run
+C:\> irm get.scoop.sh | iex
