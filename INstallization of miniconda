@@ -18,3 +18,27 @@ To verify the installation, close and reopen PowerShell. Type conda --version to
 C:\> conda --version
 
 conda 24.9.2
+
+
+
+forlinux
+Prabhash992@htb[/htb]$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+Prabhash992@htb[/htb]$ chmod +x Miniconda3-latest-Linux-x86_64.sh
+Prabhash992@htb[/htb]$ ./Miniconda3-latest-Linux-x86_64.sh -b -u
+Prabhash992@htb[/htb]$ eval "$(/home/$USER/miniconda3/bin/conda shell.$(ps -p $$ -o comm=) hook)"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
