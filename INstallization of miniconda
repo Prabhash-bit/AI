@@ -28,11 +28,15 @@ Prabhash992@htb[/htb]$ ./Miniconda3-latest-Linux-x86_64.sh -b -u
 Prabhash992@htb[/htb]$ eval "$(/home/$USER/miniconda3/bin/conda shell.$(ps -p $$ -o comm=) hook)"
 
 
+To initialize conda for your shell, run the following command after installing Miniconda:
+Prabhash992@htb[/htb]$ conda init
 
-
-
-
-
+Finally, run these two commands to complete the init process
+Prabhash992@htb[/htb]$ conda config --add channels defaults
+Prabhash992@htb[/htb]$ conda config --add channels conda-forge
+Prabhash992@htb[/htb]$ conda config --add channels nvidia # only needed if you are on a PC that has a nvidia gpu
+Prabhash992@htb[/htb]$ conda config --add channels pytorch
+Prabhash992@htb[/htb]$ conda config --set channel_priority strict
 
 
 
