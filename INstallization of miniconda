@@ -6,3 +6,15 @@ First, install Scoop. Open PowerShell and run:
 
 C:\> Set-ExecutionPolicy RemoteSigned -scope CurrentUser # Allow scripts to run
 C:\> irm get.scoop.sh | iex
+
+
+Next, add the extras bucket, which contains Miniconda:
+C:\> scoop bucket add extras
+
+Finally, install Miniconda with:
+C:\> scoop install miniconda3
+
+To verify the installation, close and reopen PowerShell. Type conda --version to check if Miniconda is installed correctly.
+C:\> conda --version
+
+conda 24.9.2
