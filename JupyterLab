@@ -6,3 +6,11 @@ Documentation and Sharing: JupyterLab supports markdown and LaTeX for creating r
 JupyterLab can be easily installed using conda, if it isn't already installed:
 Make sure you are running the command from within your ai environment.
 Prabhash992@htb[/htb]$ conda install -y jupyter jupyterlab notebook ipykernel 
+Prabhash992@htb[/htb]$ jupyter lab
+
+
+JupyterLab's primary component is the notebook, which allows combining code, text, and visualizations in a single document. Notebooks are organized into cells, where each cell can contain either code or markdown text.
+
+Code cells: Execute code in various languages (Python, R, Julia).
+Markdown cells: Create formatted text, equations, and images using markdown syntax.
+Raw cells: Untyped raw text.
