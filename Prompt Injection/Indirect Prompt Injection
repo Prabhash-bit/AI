@@ -1,1 +1,9 @@
+After discussing direct prompt injection, we will discuss indirect prompt injection. 
+Indirect prompt injection attacks occur when an attacker can place a payload in a resource, which is subsequently fed to an LLM. 
+The critical difference to direct prompt injection is that the attacker does not directly interact with the LLM but through an indirection.
 
+For example, consider an LLM that is tasked with summarizing incoming e-mails. 
+If an attacker can send an e-mail containing a prompt injection payload to the LLM, prompt injection vulnerabilities may occur. 
+However, since the attacker does not feed the payload directly to the LLM but rather indirectly via an e-mail, which is subsequently used in the LLM prompt, it is an indirect prompt injection attack.
+
+In this section, we will explore three different indirect prompt injection scenarios.
