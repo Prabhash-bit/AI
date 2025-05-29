@@ -1,0 +1,33 @@
+Prompt Leaking & Exfiltrating Sensitive Information
+We will start by discussing one of the simplest prompt injection attack vectors: leaking the system prompt. This can be useful in two different ways. 
+Firstly, if the system prompt contains any sensitive information, leaking the system prompt gives us unauthorized access to the information.
+Secondly, if we want to prepare for further attacks, such as jailbreaking the model, knowing the system prompt and any potential guardrails defined within it can be immensely helpful. 
+Bypassing potential mitigations becomes much easier once we know the exact phrasing of the system prompt. 
+Furthermore, the system prompt might leak additional systems the model can access, potentially revealing additional attack vectors.
+
+The Lab
+The lab exposes an SSH service for you to connect to and interact with the local webserver running on port 80 and SMTP server running on port 25. The lab also needs to be able to connect back to your system so you need to forward a local port. The SSH server is not configured for code execution. You can forward the ports to interact with the lab using the following command:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
