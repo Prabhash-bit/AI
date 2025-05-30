@@ -24,9 +24,19 @@ ML10	Model Poisoning:                                                        Att
 
 
 
+Input Manipulation Attack (ML01)
+As the name suggests, input manipulation attacks comprise any type of attack against an ML model that results from manipulating the input data. 
+Typically, the result of these attacks is unexpected behavior of the ML model that deviates from the intended behavior. The impact depends highly on the concrete scenario and circumstances in which the model is used. 
+It can range from financial and reputational damage to legal consequences or data loss.
+
+Many real-world input manipulation attack vectors apply small perturbations to benign input data, resulting in unexpected behavior by the ML model. In contrast, the perturbations are so small that the input looks
+benign to the human eye. For instance, consider a self-driving car that uses an ML-based system for image classification of road signs to detect the current speed limit, stop signs, etc. In an input manipulation attack, 
+an attacker could add small perturbations like particularly placed dirt specks, small stickers, or graffiti to road signs. While these perturbations look harmless to the human eye, they could result
+in the misclassification of the sign by the ML-based system. This can have deadly consequences for passengers of the vehicle. For more details on this attack vector, check out this and this paper.
 
 
-
+https://arxiv.org/pdf/1707.08945
+https://arxiv.org/pdf/2307.08278
 
 
 
