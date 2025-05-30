@@ -4,3 +4,55 @@ Thus, red team assessments are often the way to go when assessing the security o
 Furthermore, ML-based systems are comprised of various components that interact with each other. Often, security vulnerabilities arise at these interaction points. As such, including all these components in the security assessment is beneficial. 
 Determining the scope of a penetration test for an ML-based system can be difficult. It may inadvertently exclude specific components or interaction points, potentially making particular security vulnerabilities impossible to reveal.
 
+Attacking ML-based Systems (ML OWASP Top 10)
+----------------------------------------------------------
+Just like for Web Applications, Web APIs, and Mobile Applications, OWASP has published a Top 10 list of security risks regarding the deployment and management of ML-based Systems, the Top 10 for Machine Learning Security. 
+We will briefly discuss the ten risks to obtain an overview of security issues resulting from ML-based systems.
+
+
+ID	                                                                          Description
+ML01	Input Manipulation Attack:                                              Attackers modify input data to cause incorrect or malicious model outputs.
+ML02	Data Poisoning Attack:                                                  Attackers inject malicious or misleading data into training data, compromising model performance or creating backdoors.
+ML03	Model Inversion Attack:                                                 Attackers train a separate model to reconstruct inputs from model outputs, potentially revealing sensitive information.
+ML04	Membership Inference Attack:                                            Attackers analyze model behavior to determine whether data was included in the model's training data set, potentially revealing sensitive information.
+ML05	Model Theft:                                                            Attackers train a separate model from interactions with the original model, thereby stealing intellectual property.
+ML06	AI Supply Chain Attacks:                                                Attackers exploit vulnerabilities in any part of the ML supply chain.
+ML07	Transfer Learning Attack:                                               Attackers manipulate the baseline model that is subsequently fine-tuned by a third-party. This can lead to biased or backdoored models.
+ML08	Model Skewing:                                                          Attackers skew the model's behavior for malicious purposes, for instance, by manipulating the training data set.
+ML09	Output Integrity Attack:                                                Attackers manipulate a model's output before processing, making it look like the model produced a different output.
+ML10	Model Poisoning:                                                        Attackers manipulate the model's weights, compromising model performance or creating backdoors.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
