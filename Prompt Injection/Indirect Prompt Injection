@@ -197,6 +197,7 @@ Note, since the LLM relies on randomness, students might be required to change t
 
 
 
+ssh htb-stdnt@STMIP -p STMPO -R 8000:127.0.0.1:8000 -L 2525:127.0.0.1:25 -L 5000:127.0.0.1:80 -N
 
 
 
