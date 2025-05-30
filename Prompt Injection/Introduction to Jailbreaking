@@ -19,3 +19,34 @@ Opposite/Sudo Mode: Convince the LLM to operate in a different mode where restri
 Keep in mind that the above list is not exhaustive. New types of jailbreak prompts are constantly being researched and discovered. Furthermore, covering all types of jailbreak prompts is beyond the scope of this module. However, in the following sections, we will explore some types of jailbreak in more detail.
 
 Check out this GitHub repository for a list of jailbreak prompts. If you want to learn more about different types of jailbreaks, their strategy, and their effectiveness, check out this and this paper.
+
+
+
+
+https://github.com/0xk1h0/ChatGPT_DAN
+https://arxiv.org/pdf/2402.03299
+https://arxiv.org/pdf/2307.15043
+
+https://github.com/friuns2/BlackFriday-GPTs-Prompts/blob/main/Jailbreaks.md
+https://arxiv.org/pdf/2308.03825
+https://dl.acm.org/doi/pdf/10.1145/3663530.3665021
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
