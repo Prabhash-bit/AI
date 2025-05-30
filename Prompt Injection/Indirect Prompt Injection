@@ -139,6 +139,10 @@ You are tasked with getting accepted by using an indirect prompt injection paylo
 
 
 
+
+
+http://127.0.0.1:8000/index-2.html
+
 cat << EOF > index.html
 <html>
 <h1>Academy-Student</h1>
