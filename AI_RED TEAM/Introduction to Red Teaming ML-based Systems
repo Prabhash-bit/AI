@@ -40,8 +40,18 @@ https://arxiv.org/pdf/2307.08278
 
 
 
+Data Poisoning Attack (ML02)
+---------------------------------------
+Data poisoning attacks on ML-based systems involve injecting malicious or misleading data into the training dataset to compromise the model's accuracy, performance, or behavior. 
+As discussed before, the quality of any ML model is highly dependent on the quality of the training data. As such, these attacks can cause a model to make incorrect predictions, misclassify certain inputs, 
+or behave unpredictably in specific scenarios. ML models often rely on large-scale, automated data collection from various sources, so they may be more susceptible to such tampering, 
+especially when the sources are unverified or gathered from public domains.
 
+As an example, assume an adversary is able to inject malicious data into the training data set for a model used in antivirus software to decide whether a given binary is malware. 
+The adversary may manipulate the training data to effectively establish a backdoor that enables them to create custom malware, which the model classifies as a benign binary. 
+More details about installing backdoors through data poisoning attacks are discussed in this paper.
 
+https://arxiv.org/pdf/2408.13221
 
 
 
