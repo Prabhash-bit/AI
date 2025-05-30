@@ -1,1 +1,6 @@
+Red Teaming ML-based Systems
+Unlike traditional systems, ML-based systems face unique vulnerabilities because they rely on large datasets, statistical inference, and complex model architectures. 
+Thus, red team assessments are often the way to go when assessing the security of ML-based systems, as many advanced attack techniques require more time than a typical penetration test would last. 
+Furthermore, ML-based systems are comprised of various components that interact with each other. Often, security vulnerabilities arise at these interaction points. As such, including all these components in the security assessment is beneficial. 
+Determining the scope of a penetration test for an ML-based system can be difficult. It may inadvertently exclude specific components or interaction points, potentially making particular security vulnerabilities impossible to reveal.
 
