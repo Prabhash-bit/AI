@@ -1,1 +1,8 @@
+Popular tools for assessing model security include Adversarial Robustness Toolbox (ART) and PyRIT
+https://github.com/Trusted-AI/adversarial-robustness-toolbox
 
+https://github.com/Azure/PyRIT
+
+
+we will examine the LLM vulnerability scanner garak
+https://github.com/leondz/garak
