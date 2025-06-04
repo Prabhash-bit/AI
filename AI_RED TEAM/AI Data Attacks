@@ -1,1 +1,46 @@
+Having established the critical role of data and the structure of the data pipeline, we now focus specifically on AI data attacks. 
+This module explores the techniques adversaries use to compromise AI systems by targeting the data itself; either during the training phase or by manipulating the stored model artifacts.
+
+Unlike evasion attacks (manipulating inputs to fool a deployed model) or privacy attacks (extracting sensitive information from a model), the attacks covered here fundamentally undermine the model's 
+integrity by corrupting its foundation: the data it learns from or the format it's stored in.
+
+
+Each stage of the data pipeline presents potential attack surfaces adversaries can exploit.
+--=======================================================================================================
+
+During data collection
+-------------------------------
+During data collection, the primary threat is initial data poisoning, where an attacker intentionally injects malicious data. This is a prime opportunity for introducing data intended for label flipping or feature attacks. 
+In the e-commerce example, this could manifest as submitting fake positive reviews (poisoned features/labels) to boost a product's recommendations or reviews with specific keywords (potential backdoor triggers) 
+designed to cause unintended behavior later. For the healthcare scenario, an attacker might subtly alter DICOM metadata during ingestion or manipulate clinical notes, potentially mislabeling samples or embedding
+subtle feature perturbations. If this poisoned data infiltrates the training set, it can corrupt the resulting model according to the attacker's goals.
+
+The storage stage 
+--------------------------
+The storage stage faces traditional data security threats alongside model-specific risks, particularly relevant for model stenography and Trojan attacks. 
+Unauthorized access to the AWS S3 data lake or the healthcare provider's secure storage could allow theft or tampering of training datasets, potentially modifying labels or features post-collection. 
+Furthermore, stored model files (the .pkl recommendation model on S3, the .pt diagnostic model) are valuable targets. An attacker gaining write access could replace a legitimate model with a 
+malicious one containing an embedded trojan or execute a model stenography attack by hiding code within the model file itself (leveraging insecure deserialization like pickle.load()), 
+potentially compromising the Flask API server or the clinical system upon loading.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
