@@ -54,7 +54,12 @@ More details about installing backdoors through data poisoning attacks are discu
 https://arxiv.org/pdf/2408.13221
 
 
-
+Storage
+---------------------------------------------
+Following collection, data requires storage. The choice of technology hinges on the data's structure, volume, and access patterns. Structured data often resides in relational databases (PostgreSQL), 
+while semi-structured logs might use NoSQL databases (MongoDB). For large, diverse datasets, organizations frequently employ data lakes built on distributed file systems (Hadoop HDFS) or cloud object storage (AWS S3, 
+Azure Blob Storage). Specialized databases like InfluxDB cater to time-series data. Importantly, trained models themselves become stored artifacts, often serialized into formats like Python's pickle (.pkl), ONNX, or 
+framework-specific files (.pt, .pth, .safetensors), each presenting unique security considerations if handled improperly.
 
 
 
