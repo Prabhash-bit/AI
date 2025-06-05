@@ -24,6 +24,80 @@ malicious one containing an embedded trojan or execute a model stenography attac
 potentially compromising the Flask API server or the clinical system upon loading.
 
 
+Data processing
+-------------------------------
+Data processing offers another avenue for manipulation, potentially facilitating label flipping or feature attacks even on initially clean data. If an attacker influences the cleaning, transformation, or 
+feature engineering steps, they can corrupt data before modeling. Compromising the e-commerce platform's Spark job could lead to mislabeled review sentiments (label flipping), 
+while manipulating the healthcare provider's Python scripts could introduce subtle errors into standardized images or extracted text features (feature attacks), impacting the downstream model.
+
+
+The analysis and modeling stage
+-----------------------------------------------------
+The analysis and modeling stage is where the impact of data poisoning attacks introduced earlier becomes concrete. When the AWS SageMaker job trains the recommendation model on poisoned Parquet files 
+containing flipped labels or perturbed features, or the PyTorch process trains the diagnostic CNN on data embedded with backdoor triggers, the resulting model learns the attacker's desired manipulations. 
+It might learn incorrect patterns, exhibit biases, or contain hidden backdoors activated by specific inputs later.
+
+
+During deployment
+----------------------------------------------
+During deployment, the integrity of the model artifact remains crucial, especially concerning Trojan and model stenography risks. If the mechanism loading the model from storage (S3, secure file system) into the 
+production environment is insecure, an attacker could inject a malicious model file at this point, achieving the same trojan effect or code execution via stenography as compromising the storage layer directly.
+
+
+the monitoring and maintenance stage,
+---------------------------------------------------
+Finally, the monitoring and maintenance stage, especially the common practice of retraining models, acts as a critical enabler for training data attacks like online poisoning. 
+For example, the e-commerce platform's Airflow retraining pipeline is a prime target. Attackers could continuously submit manipulated data: perhaps subtly altering clickstream data (feature attacks), submitting 
+misleading feedback to influence future labels (label flipping), or injecting data designed to skew model weights towards particular outcomes over time. This gradual corruption degrades recommendation quality or 
+introduces biases without needing initial dataset access.
+
+The impact of successful AI data attacks can be severe, ranging from subtly biased decision-making and degraded system performance to complete model compromise and potentially enabling broader system breaches 
+through embedded trojans.
+
+
+
+
+Mapping Vulnerabilities to Security Frameworks
+--------------------------------------------------------------
+Leading security frameworks such as the OWASP Top 10 for LLM Applications, as highlighted in the "Introduction to Red Teaming AI" module, provides specific context for risks within the AI pipeline.
+
+The major risk we are particularly focused on is Data poisoning, where attackers manipulate data during collection, processing, training, or feedback stages. 
+This directly corresponds to OWASP LLM03: Training Data Poisoning.
+
+Another relevant category of risk is the AI Supply Chain, addressed by OWASP LLM05: Supply Chain Vulnerabilities. This encompasses several related threats: compromising the integrity of third-party data sources, 
+tampering with pre-trained model artifacts (like injecting trojans), or exploiting vulnerabilities in the software components and platforms that make up the pipeline infrastructure itself. 
+While LLM05 covers many infrastructure aspects tied to components, robust protection also demands adherence to general secure system design principles beyond specific LLM list items, 
+preventing unauthorized access throughout the pipeline. Ultimately, recognizing how both Training Data Poisoning and Supply Chain Vulnerabilities manifest is key to understanding the vulnerabilities in the AI data and 
+model lifecycle
+
+Complementing OWASP's specific vulnerability focus, Google's Secure AI Framework (SAIF) provides a broader, lifecycle-oriented perspective. The data integrity issues identified map well onto SAIF's core elements.
+
+
+For instance, SAIF’s principles regarding Secure Design, securing Data components, and managing the Secure Supply Chain directly address the need to protect data throughout its lifecycle. 
+Preventing Data Poisoning aligns with securing this Data Supply Chain and implementing rigorous Security Testing and validation during Model development, especially for data used in retraining. 
+Likewise, maintaining model artifact integrity and preventing malicious code injection are central to SAIF’s Secure Deployment practices and verifying the Secure Supply Chain.
+
+Finally, the challenge of monitoring for data or model manipulation, particularly within dynamic retraining loops, is covered by SAIF's emphasis on Secure Monitoring & Response.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
