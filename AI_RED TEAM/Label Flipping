@@ -108,6 +108,103 @@ yi.
 One cluster will represent Class 0 (simulating Negative sentiment) and the other Class 1 (simulating Positive sentiment). This synthetic dataset is designed to be reasonably separable, 
 making it easier to visualize the impact of the label flipping attack on the model's decision boundary.
 
+==============================================================================================================================================
+# Generate synthetic data
+n_samples = 1000
+centers = [(0, 5), (5, 0)]  # Define centers for two distinct blobs
+X, y = make_blobs(
+    n_samples=n_samples,
+    centers=centers,
+    n_features=2,
+    cluster_std=1.25,
+    random_state=SEED,
+)
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=SEED
+)
+
+print(f"Generated {n_samples} samples.")
+print(f"Training set size: {X_train.shape[0]} samples.")
+print(f"Testing set size: {X_test.shape[0]} samples.")
+print(f"Number of features: {X_train.shape[1]}")
+print(f"Classes: {np.unique(y)}")
+===========================================================================================================================================================
+
+
+Let's plot the clean dataset so it's very easy to see the relations in the data.
+
+==============================================================================================================================================================
+def plot_data(X, y, title="Dataset Visualization"):
+    """
+    Plots the 2D dataset with class-specific colors.
+
+    Parameters:
+    - X (np.ndarray): Feature data (n_samples, 2).
+    - y (np.ndarray): Labels (n_samples,).
+    - title (str): The title for the plot.
+    """
+    plt.figure(figsize=(12, 6))
+    scatter = plt.scatter(
+        X[:, 0],
+        X[:, 1],
+        c=y,
+        cmap=plt.cm.colors.ListedColormap([azure, nugget_yellow]),
+        edgecolors=node_black,
+        s=50,
+        alpha=0.8,
+    )
+    plt.title(title, fontsize=16, color=htb_green)
+    plt.xlabel("Sentiment Feature 1", fontsize=12)
+    plt.ylabel("Sentiment Feature 2", fontsize=12)
+    # Create a legend
+    handles = [
+        plt.Line2D(
+            [0],
+            [0],
+            marker="o",
+            color="w",
+            label="Negative Sentiment (Class 0)", 
+            markersize=10,
+            markerfacecolor=azure,
+        ),
+        plt.Line2D(
+            [0],
+            [0],
+            marker="o",
+            color="w",
+            label="Positive Sentiment (Class 1)",
+            markersize=10,
+            markerfacecolor=nugget_yellow,
+        ),
+    ]
+    plt.legend(handles=handles, title="Sentiment Classes")
+    plt.grid(True, color=hacker_grey, linestyle="--", linewidth=0.5, alpha=0.3)
+    plt.show()
+
+
+# Plot the data
+plot_data(X_train, y_train, title="Original Training Data Distribution")
+================================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
