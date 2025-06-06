@@ -90,6 +90,23 @@ print("Setup complete. Libraries imported and styles configured.")
 
 
 
+The Dataset
+---------------------------------
+We need data representing the customer reviews. Since processing real text data is complex and outside the scope of demonstrating the attack mechanism itself, 
+we'll use Scikit-Learn's make_blobs function to create a synthetic dataset. This provides a simplified, two-dimensional representation suitable for binary classification and visualization.
+
+Imagine that these two dimensions (Sentiment Feature 1, Sentiment Feature 2) are numerical features derived from the text reviews through some preprocessing step (e.g., using techniques like TF-IDF or word embeddings, 
+then potentially dimensionality reduction).
+
+We'll generate isotropic Gaussian blobs, essentially clusters of points in this 2D feature space.
+
+Each point 
+𝐱i=(xi1,xi2)
+ represents a review instance with its two derived features, and each instance is assigned a label 
+yi.
+
+One cluster will represent Class 0 (simulating Negative sentiment) and the other Class 1 (simulating Positive sentiment). This synthetic dataset is designed to be reasonably separable, 
+making it easier to visualize the impact of the label flipping attack on the model's decision boundary.
 
 
 
