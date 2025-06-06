@@ -17,3 +17,51 @@ overall reliability and utility. Even this relatively simple attack can have sig
 This type of attack often targets data after it has been collected, focusing on compromising the integrity of datasets held within the Storage stage of the pipeline. For example, 
 an attacker might gain unauthorized access to modify label columns in CSV files stored in a data lake (like AWS S3) or manipulate records in a PostgreSQL database. Label flipping could also occur if 
 Data Processing scripts are compromised and alter labels during transformation.
+
+
+
+A hypothetical example
+-----------------------------------------
+Let's consider hypothetical example: A company is training an AI model to analyze customer feedback on a newly launched products, labeling each review as positive or negative. 
+n attacker targets this process. Gaining access to the training dataset, they randomly flip the labels on a portion of these reviews - marking some genuinely positive feedback as negative, and vice-versa.
+
+The immediate goal is straightforward: to degrade the accuracy of the final sentiment analysis model.
+
+The effect on the company however, is more damaging. The model, now trained on this poisoned data, becomes unreliable and unpredictable. For instance, it might incorrectly report that the overall customer sentiment 
+towards the new product is predominantly negative, even if the actual feedback is largely positive, or it might report negative reviews as positive.
+
+Relying on this faulty analysis, the company might make incorrect decisions - perhaps they prematurely pull the product from the market, invest heavily in 'fixing' features customers actually liked, 
+or miss crucial positive signals indicating success, leading to potentially crippling the business.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
