@@ -6,7 +6,7 @@
 <h2>Exploiting Code Injection</h2>
 <p>If an LLM is used to generate system commands based on user inputs, code injection vulnerabilities may arise if the commands are not validated properly. Just like with SQL injection in the previous section, we might be able to inject a payload into the intended system command or trick the LLM into executing an entirely different one altogether.</p>
 <p>For instance, in a simple example, an LLM might be tasked with executing certain system commands based on user input. This is similar to the &quot;translation&quot; from user prompts to SQL queries we considered in the previous section. The main difference is that the user input is now translated into bash commands:</p>
-<img class="website-screenshot" data-url="https://academy.hackthebox.com" src="/storage/modules/307/insecure_output/code_injection_1_wide.png">
+<img class="website-screenshot" data-url="http://academy.hackthebox.com/insecure_output/code_injection_1" src="/storage/modules/307/insecure_output/code_injection_1_wide.png">
 <p>Since there are no mitigating measures, we can prompt the LLM with arbitrary inputs that result in arbitrary system commands being executed. As a PoC, we can read the file <code>/etc/hosts</code>:</p>
 <img class="website-screenshot" data-url="http://127.0.0.1:5000/insecure_output/code_injection_1" src="/storage/modules/307/insecure_output/code_injection_2_wide.png">
 <p>As the exploitation in the above case is trivial, let us move on to a slightly more complex case where the LLM is restricted to the <code>ping</code> command, and the backend implements an additional filter. This prevents us from using the same strategy as before and simply tasking the LLM with executing what we want it to:</p>
