@@ -1,4 +1,4 @@
-h1>Exfiltration Attacks</h1>
+<h1>Exfiltration Attacks</h1>
 <hr />
 <p>Exfiltration attacks are one of the most common LLM-based security vulnerabilities in the real world. These attacks enable an attacker to exfiltrate potentially sensitive information the LLM can access from other users' accounts, and they can have a significant security impact. To conduct exfiltration attacks in the real world, the payloads are typically pushed to the victims through indirect prompt injection, as discussed in the <a href="https://academy.hackthebox.com/module/details/297">Prompt Injection Attacks</a> module.</p>
 <hr />
